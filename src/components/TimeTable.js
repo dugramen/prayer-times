@@ -20,7 +20,7 @@ export default function TimeTable(props) {
 
     React.useEffect(() => {
         if (country && state && city) {
-            console.log('Fetching from https://api.aladhan.com/v1/calendarByCity?')
+            // console.log('Fetching from https://api.aladhan.com/v1/calendarByCity?')
             fetch('https://api.aladhan.com/v1/calendarByCity?' + new URLSearchParams({
                 city: city,
                 country: country,
@@ -32,7 +32,7 @@ export default function TimeTable(props) {
             .then((response) => {
                 return response.json()})
             .then((data) => {
-                console.log(`month: ${month} year: ${year}`)
+                console.log(`Successfuly fetched month: ${month} year: ${year}`)
                 return setTimesList(data.data.map(d => objectMap(d.timings, val => val.slice(0, -5).split(':'))))
             })
             .catch(error => {

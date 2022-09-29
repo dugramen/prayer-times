@@ -5,20 +5,6 @@ import Select from "react-select";
 export default function Settings(props) {
     const {settings, setSettings} = props
     const {location} = settings
-    
-    // React.useEffect(() => {
-    //     setLocation(old => ({
-    //         ...old,
-    //         State: {label: '', value: ''},
-    //         City: {label: '', value: ''}
-    //     }))
-    // }, [location.Country])
-    // React.useEffect(() => {
-    //     setLocation(old => ({
-    //         ...old,
-    //         City: {label: '', value: ''},
-    //     }))
-    // }, [location.State])
 
     const countryOptions = Country.getAllCountries().map((country) => ({
         label: country.name,
@@ -70,7 +56,7 @@ export default function Settings(props) {
     }
 
     const CscSelect = (props) => {
-        const {label, options} = props
+        const {label} = props
         return (
         <div>
             <label>{label || "Label"}</label>
@@ -165,7 +151,7 @@ export default function Settings(props) {
                     type='radio'
                     name="school"
                     value={0} 
-                    checked={settings.school === '0'}
+                    checked={settings.school == '0'}
                     onChange={onRadioChanged}
                 /> 
                 Shafi 
@@ -176,7 +162,7 @@ export default function Settings(props) {
                     type='radio'
                     name="school"
                     value={1} 
-                    checked={settings.school === '1'}
+                    checked={settings.school == '1'}
                     onChange={onRadioChanged}
                 /> 
                 Hanafi 
