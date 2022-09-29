@@ -20,7 +20,7 @@ export default function TimeTable(props) {
 
     React.useEffect(() => {
         if (country && state && city) {
-            fetch('http://api.aladhan.com/v1/calendarByCity?' + new URLSearchParams({
+            fetch('https://api.aladhan.com/v1/calendarByCity?' + new URLSearchParams({
                 city: city,
                 country: country,
                 state: state,
